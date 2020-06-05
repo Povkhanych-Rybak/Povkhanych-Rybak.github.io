@@ -1,0 +1,168 @@
+/* body by default имеет margin. Это заметно при modile view */
+/* body {
+    margin: 0;
+} */
+
+/* Global view */
+a {
+    text-decoration: none;
+    color: white;
+}
+body {
+    font-family: 'Asap', sans-serif;
+    background-color: #EBEBEB;
+}
+
+.header-container {
+    background-color: rgb(60, 60, 60);
+    position: fixed;
+    width: 100%;
+}
+
+header,footer {
+    max-width: 50.53%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+}
+
+.logo p {
+    color: white;
+    font-size: 1.2rem;
+}
+.logo p span:first-child {
+    font-weight: bold;
+}
+/* nav li a {
+    color: white;
+} */
+nav ul {
+    display: flex;
+}
+
+.nav-btn {
+    padding: 0.63rem 1.6rem;
+    border-radius: 2px;
+    /* box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.228); */
+    border: 1px solid white;
+    margin-left: 1.9rem;
+}
+
+.container {
+    min-height: 500px;
+    /* max-width: 1024px;- changed to % */
+    max-width: 50.53%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* need padding to make a space after fixed menu */
+    padding-top: 9rem;
+}
+
+.col {
+    width: 30%;
+    /* 4% от ширины container */
+    margin-bottom: 4%;
+    background-color: rgb(43, 226, 147);
+}
+
+/* класс чтобы спрятать эл.  только для desktop view */
+.hide-desk {
+    display:none;
+}
+
+.col img {
+    width: 100%;
+    height: auto;
+}
+
+/* to style only 1st line of the p */
+.col p::first-line {
+    font-weight: bold;
+}
+
+.col p {
+    color: white;
+    font-size: 0.825rem;
+    padding: 1.25rem 1.56rem;
+    line-height: 1.25rem;
+}
+
+.footer-container {
+    background-color: rgb(60, 60, 60);
+    min-height: 100px;
+}
+
+.mob-wrapper {
+    display: none;
+}
+
+
+/* если шир экрана <=768, примени стили внутри */
+/* неперепис стили сохраняються! (font-style: italic останеться, так как его не меняли) */
+
+/* Tablet view */
+@media (max-width: 768px) {
+    .col {
+        width: 47%;
+    }
+    /* возвращ для планш тот эл., котор был спрятан с примен класса hide-desk */
+    .hide-desk {
+        display: block;
+    }
+
+    header{
+        max-width: 100%;
+        padding: 0;
+    }
+    .header-container {
+        position: relative;
+    }
+    .container {
+        padding-top: 1rem;
+    }
+    
+    nav {
+        display: none;
+    }
+
+    .logo {
+        padding: 2.5rem .8rem;
+    }
+
+    .mob-wrapper {
+        display: block;
+        padding: 2.8rem;
+    }
+
+    .mob-nav {
+        display: none;
+    }
+    .mob-nav-btn {
+        display: block;
+        background-color: coral;
+        padding: 0.9rem 1.8rem;
+        border-bottom: 2px solid rgb(60, 60, 60);
+    }
+    .mob-nav ul {
+        position: absolute;
+        padding-top: 0.8rem;
+        margin-left: -2.8rem;
+        text-align: center;
+    }
+
+}          
+
+/* Mobile view */
+@media (max-width: 400px) {
+    .col {
+        width: 100%;
+    }
+    /* спрячем некотор эл. (только для mobile view) */
+    .hide-mobile {
+        display: none;
+    }
+}
